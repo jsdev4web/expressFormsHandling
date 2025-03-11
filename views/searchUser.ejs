@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search User</title>
+</head>
+<body>
+    
+    <h2>Search Results Page is Here</h2>
+
+    <%= title %><br>
+    <h4>Search Parameter: <%= search %></h4>
+    
+
+
+    <% if (locals.users) {%>
+        <% users.forEach(function(user) { %>
+
+        <% if (user.email === search) {%>
+          <li>ID: <%= user.id %></li>
+          <br><li>Name: <%= user.firstName %> <%= user.lastName %></li>
+          <br><li>Email: <%= user.email %></li>
+          <br><li>Age: <%= user.age %></li>
+          <br><li>Bio: <%= user.bio %></li>
+        <% } %>
+          
+        <% }); %>
+    <% } %>
+
+</body>
+</html>
